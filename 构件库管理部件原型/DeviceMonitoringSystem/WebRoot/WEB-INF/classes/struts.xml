@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation"
+		value="false" />
+	<constant name="struts.custom.i18n.resources" value="message" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.multipart.maxSize" value="10485760" />
+
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.ui.templateDir" value="template" />
+	<constant name="struts.ui.templateSuffix" value="ftl" />
+
+	<package name="example" namespace="/" extends="struts-default">
+		<!-- ====================================================== -->
+		<action name="login" class="LoginAction" method="loginAction">
+			<result name="success">/index.jsp</result>
+			<result name="fail">/login.jsp</result>
+		</action>
+		<action name="initInfo" class="LoginAction" method="initInfo">
+			<result name="success">/admin/User/updateinfo.jsp</result>
+		</action>
+		<action name="updateInfo" class="LoginAction"
+			method="updateInfo">
+			<result name="success">/admin/User/uppwdok.jsp</result>
+			<result name="fail">/admin/User/updateinfo.jsp</result>
+		</action>
+		<action name="register" class="LoginAction"
+			method="registerAction">
+			<result name="success">/login.jsp</result>
+			<result name="fail">/register.jsp</result>
+		</action>
+		<action name="updatePwd" class="LoginAction"
+			method="updatePwd">
+			<result name="success">/admin/User/uppwdok.jsp</result>
+			<result name="fail">/admin/User/updatepwd.jsp</result>
+		</action>
+		
+		<action name="*-*" class="{1}Action" method="{2}">
+			<result name="find">/admin/{1}/find.jsp</result>
+			<result name="saveOrUpdate">/admin/{1}/saveOrUpdate.jsp</result>
+			<result name="ok">/admin/{1}/ok.jsp</result>
+			<result name="export">/admin/{1}/export.jsp</result>
+		</action>
+
+	</package>
+
+</struts>

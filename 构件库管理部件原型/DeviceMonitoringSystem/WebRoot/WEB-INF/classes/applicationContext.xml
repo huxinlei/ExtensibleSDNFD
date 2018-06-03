@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+
+	<!-- sessionFactory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="message" />
+	</bean>
+
+	<bean id="ObjectManagerImpl"
+		class="com.ccit.manager.ObjectManagerImpl" />
+
+	<!-- ====================================================== -->
+	<bean id="LoginAction" class="com.ccit.action.LoginAction">
+		<property name="objectManager" ref="ObjectManagerImpl" />
+	</bean>
+	<bean id="UserAction" class="com.ccit.action.UserAction">
+		<property name="objectManager" ref="ObjectManagerImpl" />
+	</bean>
+	<bean id="FDeviceAction" class="com.ccit.action.FDeviceAction">
+		<property name="objectManager" ref="ObjectManagerImpl" />
+	</bean>
+	<bean id="BundleAction" class="com.ccit.action.BundleAction">
+		<property name="objectManager" ref="ObjectManagerImpl" />
+	</bean>
+	<bean id="ConstructorAction" class="com.ccit.action.ConstructorAction">
+		<property name="objectManager" ref="ObjectManagerImpl" />
+	</bean>
+	<bean id="TdcBindAction" class="com.ccit.action.TdcBindAction">
+		<property name="objectManager" ref="ObjectManagerImpl" />
+	</bean>
+	<bean id="DeviceAction" class="com.ccit.action.DeviceAction">
+		<property name="objectManager" ref="ObjectManagerImpl" />
+	</bean>
+	<bean id="DeviceLogAction" class="com.ccit.action.DeviceLogAction">
+		<property name="objectManager" ref="ObjectManagerImpl" />
+	</bean>
+	<bean id="DeviceStatusAction" class="com.ccit.action.DeviceStatusAction">
+		<property name="objectManager" ref="ObjectManagerImpl" />
+	</bean>
+	<bean id="DeviceStatusHisAction" class="com.ccit.action.DeviceStatusHisAction">
+		<property name="objectManager" ref="ObjectManagerImpl" />
+	</bean>
+	<bean id="ReadExcelAction" class="com.ccit.action.ReadExcelAction">
+		<property name="objectManager" ref="ObjectManagerImpl" />
+	</bean>
+</beans>

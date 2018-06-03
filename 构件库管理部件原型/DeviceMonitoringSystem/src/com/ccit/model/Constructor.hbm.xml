@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.ccit.model.Constructor" table="t_constructor">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="name" column="c_name" />
+		<property name="update" column="c_update" />
+		<property name="modifydate" column="c_modifydate" />
+		<property name="version" column="c_version" />
+		<property name="size" column="c_size" />
+		<property name="content" column="c_content" />
+	</class>
+</hibernate-mapping>

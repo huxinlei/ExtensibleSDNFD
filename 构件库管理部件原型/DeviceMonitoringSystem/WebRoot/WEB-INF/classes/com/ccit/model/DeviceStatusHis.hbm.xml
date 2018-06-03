@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.ccit.model.DeviceStatusHis" table="t_DeviceStatusHis">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<many-to-one name="device" class="com.ccit.model.Device" outer-join="false" lazy="false">
+		</many-to-one>
+		<property name="s_0" column="d_title" />
+		<property name="s_1" column="d_time" />
+		<property name="s_2" column="d_asx" />
+		<property name="s_3" column="d_bsx" />
+		<property name="s_4" column="d_csx" />
+		<property name="s_5" column="d_dsx" />
+		<property name="s_6" column="d_esx" />
+		<property name="s_7" column="d_fsx" />
+		<property name="s_8" column="d_gsx" />
+		<property name="s_9" column="d_bz" />
+	</class>
+</hibernate-mapping>
