@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: TestPcap4jBundle Plug-in
+Bundle-SymbolicName: TestPcap4jBundle
+Bundle-Version: 1.0.0
+Bundle-Activator: testpcap4jbundle.Activator
+Bundle-Vendor: huxinlei
+Eclipse-LazyStart: true
+Import-Package: org.osgi.framework;version="1.3.0"
+Require-Bundle: jna,
+ pcap4j_core333

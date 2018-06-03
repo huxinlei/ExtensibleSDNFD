@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/jna.jar"/>
+	<classpathentry kind="lib" path="lib/logback-classic-1.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/logback-core-1.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/pcap4j-1.7.0-javadoc.jar"/>
+	<classpathentry kind="lib" path="lib/pcap4j-core-1.7.0.jar"/>
+	<classpathentry kind="lib" path="lib/pcap4j-packetfactory-propertiesbased-1.7.0.jar"/>
+	<classpathentry kind="lib" path="lib/pcap4j-packetfactory-static-1.7.0.jar"/>
+	<classpathentry kind="lib" path="lib/pcap4j-packettest-1.7.0-tests.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.7.21.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
