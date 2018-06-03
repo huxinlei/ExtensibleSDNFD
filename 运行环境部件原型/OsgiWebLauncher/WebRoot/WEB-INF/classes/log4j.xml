@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration> 
+  <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">  
+   <layout class="org.apache.log4j.PatternLayout">  
+    <param name="ConversionPattern" value="%-5p %d %l - %m%n" />  
+   </layout>  
+     
+   <!--限制输出级别-->  
+   <filter class="org.apache.log4j.varia.LevelRangeFilter">  
+    <param name="LevelMax" value="ERROR"/>  
+    <param name="LevelMin" value="DEBUG"/>  
+   </filter>  
+  </appender> 
+  
+  <appender name="FILE" class="org.apache.log4j.RollingFileAppender">  
+   <param name="File" value="d:/java/log/esm.log"/>  
+   <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+   <param name="Append" value="true"/>
+    
+   <layout class="org.apache.log4j.PatternLayout">  
+    <param name="ConversionPattern" value="%-5p %d %l - %m%n" />  
+   </layout>  
+   
+   <filter class="org.apache.log4j.varia.LevelRangeFilter">  
+    <param name="LevelMax" value="ERROR"/>  
+    <param name="LevelMin" value="INFO"/>  
+   </filter>  
+  </appender> 
+  
+  <appender name="DATABASE" class="org.apache.log4j.jdbc.JDBCAppender">  
+   <param name="URL" value="jdbc:oracle:thin:@localhost:1521:ora10g"/>  
+   <param name="driver" value="oracle.jdbc.driver.OracleDriver"/>  
+   <param name="user" value="esm"/>  
+   <param name="password" value="esm"/>      
+   <layout class="edu.bjtu.esm.common.log4j.JDBCPatternLayout">  
+    <param name="ConversionPattern"  
+     value="INSERT INTO sys_app_log(occur_time,priority,class,location,message) VALUES(to_timestamp('%d','yyyy-mm-dd hh24:mi:ss:ff'),'%p','%c','%l','%m')" />  
+   </layout>
+   
+   <filter class="org.apache.log4j.varia.LevelRangeFilter">  
+    <param name="LevelMax" value="ERROR"/>  
+    <param name="LevelMin" value="WARN"/>  
+   </filter>
+  </appender>
+  
+  <logger name="org.springframework" additivity="false">     
+      <level value="DEBUG" />     
+      <appender-ref ref="CONSOLE" />     
+  </logger>
+     
+  <root>  
+    <priority value="debug" />  
+    <appender-ref ref="CONSOLE" />  
+    <!-- <appender-ref ref="FILE" /> -->  
+    <!-- <appender-ref ref="DATABASE" /> -->
+  </root>
+</log4j:configuration>
