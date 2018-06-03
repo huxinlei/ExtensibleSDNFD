@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.ccit.model.TdcBind" table="t_d_c_bind">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="d_id" column="d_id" />
+		<property name="c_id" column="c_id" />
+		<property name="d_c_binddate" column="d_c_binddate" />
+		<property name="d_c_modifydate" column="d_c_modifydate" />
+	</class>
+</hibernate-mapping>

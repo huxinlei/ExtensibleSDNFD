@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.ccit.model.User" table="t_User">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="s_0" column="username" />
+		<property name="s_1" column="password" />
+		<property name="s_2" column="name" />
+		<property name="s_3" column="birthday" />
+		<property name="s_4" column="sex" />
+		<property name="s_5" column="tel" />
+		<property name="s_6" column="jjlxr" />
+		<property name="s_7" column="jjtel" />
+		<property name="s_8" column="jg" />
+		<property name="s_9" column="address" />
+		<property name="s_10" column="bm" />
+		<property name="s_11" column="type" />
+		<property name="s_12" column="by_1" />
+		<property name="s_13" column="by_2" />
+		<property name="s_14" column="by_3" />
+		<property name="s_15" column="bz" />
+	</class>
+</hibernate-mapping>
