@@ -1,2 +1,0 @@
-C
-// This c.txt should have the first line being a single C

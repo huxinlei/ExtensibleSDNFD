@@ -1,4 +1,0 @@
-requires.0.name = foo
-requires.0.namespace = bar
-requires.0.min = 6
-requires.0.max = 7 
